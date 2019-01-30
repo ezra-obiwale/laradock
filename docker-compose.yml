@@ -107,6 +107,8 @@ services:
           - BLACKFIRE_CLIENT_TOKEN=${BLACKFIRE_CLIENT_TOKEN}
       volumes:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+        - ~/.ssh:/root/.ssh
+        - ~/.gitconfig:/root/.gitconfig
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       ports:
@@ -166,6 +168,7 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
       expose:
         - "9000"
+        - "80"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       environment:
