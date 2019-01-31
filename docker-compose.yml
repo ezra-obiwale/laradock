@@ -109,10 +109,27 @@ services:
         - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
         - ~/.ssh:/root/.ssh
         - ~/.gitconfig:/root/.gitconfig
+        - ~/.composer:/root/.composer
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "core.test:${DOCKER_HOST_IP}"
+        - "allpay.test:${DOCKER_HOST_IP}"
+        - "asal.test:${DOCKER_HOST_IP}"
+        - "schoolable.test:${DOCKER_HOST_IP}"
+        - "firestorm.schoolable.test:${DOCKER_HOST_IP}"
+        - "parents.schoolable.test:${DOCKER_HOST_IP}"
+        - "localhost.test:${DOCKER_HOST_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
+        - "10:10"
+        - "20:20"
+        - "30:30"
+        - "40:40"
+        - "50:50"
+        - "60:60"
+        - "70:70"
+        - "90:90"
+        - "100:100"
       tty: true
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
@@ -171,6 +188,13 @@ services:
         - "80"
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
+        - "core.test:${DOCKER_HOST_IP}"
+        - "allpay.test:${DOCKER_HOST_IP}"
+        - "asal.test:${DOCKER_HOST_IP}"
+        - "schoolable.test:${DOCKER_HOST_IP}"
+        - "firestorm.schoolable.test:${DOCKER_HOST_IP}"
+        - "parents.schoolable.test:${DOCKER_HOST_IP}"
+        - "localhost.test:${DOCKER_HOST_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
         - DOCKER_HOST=tcp://docker-in-docker:2375
