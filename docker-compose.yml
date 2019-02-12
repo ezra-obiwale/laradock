@@ -112,12 +112,7 @@ services:
         - ~/.composer:/root/.composer
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
-        - "core.test:${DOCKER_HOST_IP}"
-        - "allpay.test:${DOCKER_HOST_IP}"
-        - "asal.test:${DOCKER_HOST_IP}"
-        - "schoolable.test:${DOCKER_HOST_IP}"
-        - "firestorm.schoolable.test:${DOCKER_HOST_IP}"
-        - "parents.schoolable.test:${DOCKER_HOST_IP}"
+        - "sandbox.test:${DOCKER_HOST_IP}"
         - "localhost.test:${DOCKER_HOST_IP}"
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
@@ -194,6 +189,7 @@ services:
         - "schoolable.test:${DOCKER_HOST_IP}"
         - "firestorm.schoolable.test:${DOCKER_HOST_IP}"
         - "parents.schoolable.test:${DOCKER_HOST_IP}"
+        - "sandbox.test:${DOCKER_HOST_IP}"
         - "localhost.test:${DOCKER_HOST_IP}"
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
